@@ -14,7 +14,7 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/filter"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
-	"github.com/bnb-chain/zkbnb-smt/database"
+	"github.com/zecrey-labs/zecrey-smt/database"
 )
 
 var (

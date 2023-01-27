@@ -8,8 +8,8 @@ package memory
 import (
 	"testing"
 
-	"github.com/bnb-chain/zkbnb-smt/database"
-	"github.com/bnb-chain/zkbnb-smt/database/dbtest"
+	"github.com/zecrey-labs/zecrey-smt/database"
+	"github.com/zecrey-labs/zecrey-smt/database/dbtest"
 )
 
 func TestMemoryDB(t *testing.T) {

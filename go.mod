@@ -1,6 +1,6 @@
-module github.com/bnb-chain/zkbnb-smt
+module github.com/zecrey-labs/zecrey-smt
 
-go 1.17
+go 1.19
 
 require (
 	github.com/alicebob/miniredis/v2 v2.22.0
@@ -22,7 +22,6 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
-	github.com/onsi/gomega v1.19.0 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.32.1 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect

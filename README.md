@@ -2,11 +2,11 @@
 
 <p>
   <img src="https://img.shields.io/github/actions/workflow/status/bnb-chain/zkbnb-smt/checker.yml?style=flat-square">
-  <a href="https://github.com/bnb-chain/zkbnb-smt/blob/master/LICENSE">
+  <a href="https://github.com/zecrey-labs/zecrey-smt/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/globocom/go-buffer?color=blue&style=flat-square">
   </a>
   <img src="https://img.shields.io/github/go-mod/go-version/bnb-chain/zkbnb-smt?style=flat-square">
-  <a href="https://pkg.go.dev/github.com/bnb-chain/zkbnb-smt">
+  <a href="https://pkg.go.dev/github.com/zecrey-labs/zecrey-smt">
     <img src="https://img.shields.io/badge/Go-reference-blue?style=flat-square">
   </a>
 </p>
@@ -18,7 +18,7 @@ For an overview, see the [design](./docs/design.md).
 
 ## Installation
 ```shell
-go get github.com/bnb-chain/zkbnb-smt@latest
+go get github.com/zecrey-labs/zecrey-smt@latest
 ```
 
 ## Quickstart
@@ -30,8 +30,8 @@ import (
 	"crypto/sha256"
 	"fmt"
 
-	bsmt "github.com/bnb-chain/zkbnb-smt"
-	"github.com/bnb-chain/zkbnb-smt/database/memory"
+	bsmt "github.com/zecrey-labs/zecrey-smt"
+	"github.com/zecrey-labs/zecrey-smt/database/memory"
 )
 
 func main() {

@@ -11,8 +11,8 @@ import (
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/storage"
 
-	"github.com/bnb-chain/zkbnb-smt/database"
-	"github.com/bnb-chain/zkbnb-smt/database/dbtest"
+	"github.com/zecrey-labs/zecrey-smt/database"
+	"github.com/zecrey-labs/zecrey-smt/database/dbtest"
 )
 
 func TestLevelDB(t *testing.T) {

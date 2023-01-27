@@ -9,7 +9,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/bnb-chain/zkbnb-smt/database"
+	"github.com/zecrey-labs/zecrey-smt/database"
 )
 
 // TestDatabaseSuite runs a suite of tests against a KeyValueStore database

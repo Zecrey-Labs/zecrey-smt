@@ -19,10 +19,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/bnb-chain/zkbnb-smt/database"
-	wrappedLevelDB "github.com/bnb-chain/zkbnb-smt/database/leveldb"
-	"github.com/bnb-chain/zkbnb-smt/database/memory"
-	wrappedRedis "github.com/bnb-chain/zkbnb-smt/database/redis"
+	"github.com/zecrey-labs/zecrey-smt/database"
+	wrappedLevelDB "github.com/zecrey-labs/zecrey-smt/database/leveldb"
+	"github.com/zecrey-labs/zecrey-smt/database/memory"
+	wrappedRedis "github.com/zecrey-labs/zecrey-smt/database/redis"
 )
 
 var (

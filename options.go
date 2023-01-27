@@ -6,8 +6,8 @@
 package bsmt
 
 import (
-	"github.com/bnb-chain/zkbnb-smt/metrics"
 	"github.com/panjf2000/ants/v2"
+	"github.com/zecrey-labs/zecrey-smt/metrics"
 )
 
 // Option is a function that configures SMT.
