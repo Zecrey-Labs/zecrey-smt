@@ -774,9 +774,12 @@ func (tree *BNBSparseMerkleTree) writeNode(db database.Batcher, fullNode *TreeNo
 
 func (tree *BNBSparseMerkleTree) Commit(recentVersion *Version) (Version, error) {
 	newVersion := tree.version + 1
-	if recentVersion != nil && *recentVersion >= newVersion {
-		return tree.version, ErrVersionTooHigh
+	if recentVersion != nil {
+		newVersion = *recentVersion + 1
 	}
+	// if recentVersion != nil && *recentVersion >= newVersion {
+	// 	return tree.version, ErrVersionTooHigh
+	// }
 
 	size := uint64(0)
 	journalSize := tree.journal.len()
