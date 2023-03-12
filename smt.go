@@ -765,7 +765,7 @@ func (tree *BNBSparseMerkleTree) Clear(recentVersion *Version) (err error) {
 			tree.rootSize += uint64(versionSize * len(tree.root.Children[i].Versions))
 		}
 	}
-	_, err = tree.Commit(nil)
+	_, err = tree.Commit(&version)
 	return err
 }
 
