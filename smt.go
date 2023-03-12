@@ -756,9 +756,6 @@ func (tree *BNBSparseMerkleTree) Clear(recentVersion *Version) (err error) {
 		return err
 	}
 
-	storageTreeNode := &StorageTreeNode{}
-	tree.root = storageTreeNode.ToTreeNode(0, tree.nilHashes, tree.hasher)
-
 	tree.rootSize = tree.root.Size()
 	for i := 0; i < len(tree.root.Children); i++ {
 		if tree.root.Children[i] != nil {
