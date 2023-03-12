@@ -743,6 +743,7 @@ func (tree *BNBSparseMerkleTree) Clear() error {
 	tree.root = NewTreeNode(0, 0, tree.nilHashes, tree.hasher)
 	tree.version = Version(0)
 	tree.recentVersion = Version(0)
+	tree.journal = newJournal()
 
 	storageTreeNode := &StorageTreeNode{}
 	tree.root = storageTreeNode.ToTreeNode(0, tree.nilHashes, tree.hasher)
