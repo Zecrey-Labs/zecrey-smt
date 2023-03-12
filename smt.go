@@ -739,11 +739,22 @@ func (tree *BNBSparseMerkleTree) Reset() {
 	tree.rootSize = tree.lastSaveRootSize
 }
 
-func (tree *BNBSparseMerkleTree) Clear() error {
+func (tree *BNBSparseMerkleTree) Clear(recentVersion *Version) (err error) {
+	version := Version(0)
+	if recentVersion != nil {
+		version = *recentVersion
+	}
 	tree.root = NewTreeNode(0, 0, tree.nilHashes, tree.hasher)
-	tree.version = Version(0)
-	tree.recentVersion = Version(0)
-	tree.journal = newJournal()
+	tree.rootSize = 0
+	tree.lastSaveRoot = tree.root
+	tree.lastSaveRootSize = 0
+	tree.version = version
+	tree.recentVersion = version
+	tree.journal.flush()
+	tree.dbCache, err = lru.New(tree.dbCacheSize)
+	if err != nil {
+		return err
+	}
 
 	storageTreeNode := &StorageTreeNode{}
 	tree.root = storageTreeNode.ToTreeNode(0, tree.nilHashes, tree.hasher)
@@ -754,7 +765,7 @@ func (tree *BNBSparseMerkleTree) Clear() error {
 			tree.rootSize += uint64(versionSize * len(tree.root.Children[i].Versions))
 		}
 	}
-	_, err := tree.Commit(nil)
+	_, err = tree.Commit(nil)
 	return err
 }
 

@@ -24,7 +24,7 @@ type (
 		LatestVersion() Version
 		RecentVersion() Version
 		Reset()
-		Clear() error
+		Clear(recentVersion *Version) error
 		Commit(recentVersion *Version) (Version, error)
 		Rollback(version Version) error
 	}
