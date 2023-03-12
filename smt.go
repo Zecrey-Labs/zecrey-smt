@@ -739,6 +739,24 @@ func (tree *BNBSparseMerkleTree) Reset() {
 	tree.rootSize = tree.lastSaveRootSize
 }
 
+func (tree *BNBSparseMerkleTree) Clear() error {
+	tree.root = NewTreeNode(0, 0, tree.nilHashes, tree.hasher)
+	tree.version = Version(0)
+	tree.recentVersion = Version(0)
+
+	storageTreeNode := &StorageTreeNode{}
+	tree.root = storageTreeNode.ToTreeNode(0, tree.nilHashes, tree.hasher)
+
+	tree.rootSize = tree.root.Size()
+	for i := 0; i < len(tree.root.Children); i++ {
+		if tree.root.Children[i] != nil {
+			tree.rootSize += uint64(versionSize * len(tree.root.Children[i].Versions))
+		}
+	}
+	_, err := tree.Commit(nil)
+	return err
+}
+
 func (tree *BNBSparseMerkleTree) writeNode(db database.Batcher, fullNode *TreeNode, version Version, recentVersion *Version) (uint64, error) {
 	changed := uint64(0)
 	if fullNode.PreviousVersion() > tree.gcStatus.latestGCVersion {

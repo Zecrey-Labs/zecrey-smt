@@ -1,6 +1,6 @@
 module github.com/zecrey-labs/zecrey-smt
 
-go 1.19
+go 1.20
 
 require (
 	github.com/alicebob/miniredis/v2 v2.22.0
